@@ -10,7 +10,7 @@ export function sortStrings(arr, param = 'asc') {
   });
   if (param === 'asc') {
     mapped.sort(function (a, b) {
-      return a.value.localeCompare(b.value, 'kf', {caseFirst: 'upper'});
+      return a.value.localeCompare(b.value, ['ru', 'en'], {caseFirst: 'upper'});
     });
     arr = mapped.map(function(el) {
       return arr[el.index];
@@ -18,7 +18,7 @@ export function sortStrings(arr, param = 'asc') {
   }
   if (param === 'desc') {
     mapped.sort(function (b, a) {
-      return a.value.localeCompare(b.value, 'ru', {caseFirst: 'upper'});
+      return a.value.localeCompare(b.value, ['ru', 'en'], {caseFirst: 'upper'});
     });
     arr = mapped.map(function(el) {
       return arr[el.index];
