@@ -5,5 +5,9 @@
  * @returns {object} - returns the new object
  */
 export const pick = (obj, ...fields) => {
-
+  let result = {};
+  fields.forEach(value => {
+    result[value] = obj[value];
+  });
+  return result;
 };
